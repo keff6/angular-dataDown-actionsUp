@@ -10,6 +10,7 @@ import { CarModel } from '../car-model.model';
 })
 export class ModelsListComponent implements OnInit {
   @Input() models: CarModel[];
+  @Output() makerSelected = new EventEmitter<void>();
   model: string;
 
   constructor() { }
@@ -17,8 +18,9 @@ export class ModelsListComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectedCar(car: CarModel){
+  onSelectedCar(car: CarModel){
     this.model = car.name;
+    this.makerSelected.emit();
   }
 
 }

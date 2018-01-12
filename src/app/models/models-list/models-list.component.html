@@ -1,7 +1,10 @@
 <div class="row border margin">
     <div class="col-md-10">
         <div>Your model: {{ model }}</div>
-      <app-model-item *ngFor="let model of models" [model]="model" (selectedCar)="selectedCar($event)"></app-model-item>
+      <app-model-item 
+        *ngFor="let model of models" 
+        [model]="model" 
+        (selectedCar)="onSelectedCar($event)"></app-model-item>
     </div>
   </div>
   

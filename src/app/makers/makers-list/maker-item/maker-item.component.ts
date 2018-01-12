@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Maker } from '../../maker.model';
 import { CarModel } from '../../../models/car-model.model';
 
@@ -9,11 +9,17 @@ import { CarModel } from '../../../models/car-model.model';
 })
 export class MakerItemComponent implements OnInit {
   @Input() maker: Maker;
+  @Output() makerSelected = new EventEmitter<void>();
   makerName: String;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onMakerSelected(maker: Maker){
+    this.makerName = maker.name;
+    this.makerSelected.emit();
   }
   
 }
