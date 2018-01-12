@@ -1,0 +1,16 @@
+.car-info{
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-right: 15px;
+    border-radius: 3px;
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding-top:10px;
+}
+
+.car-info:hover{
+    background-color: rgb(56, 163, 235);
+    color: #444;
+}
